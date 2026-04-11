@@ -1,0 +1,15 @@
+{application, crates_filter, [
+    {description, "em_filter agent for crates.io Rust package search"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {mod, {crates_filter_app, []}},
+    {applications, [
+        kernel,
+        stdlib,
+        em_filter
+    ]},
+    {env, []},
+    {modules, []},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/EmergenceSystem/crates_filter"}]}
+]}.
