@@ -149,7 +149,7 @@ build_embryo(#{<<"name">> := Name} = Crate) ->
     Resume    = format_resume(Desc, Version, Downloads),
     {true, #{
         <<"properties">> => #{
-            <<"url">>       => list_to_binary(Url),
+            <<"url">>       => unicode:characters_to_binary(Url),
             <<"resume">>    => Resume,
             <<"title">>     => Name,
             <<"version">>   => Version,
@@ -167,4 +167,4 @@ format_resume(Desc, Version, Downloads) ->
                 " — " ++ integer_to_list(Downloads) ++ " downloads";
             true -> ""
          end,
-    list_to_binary(D ++ V ++ Dl).
+    unicode:characters_to_binary(D ++ V ++ Dl).
